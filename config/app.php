@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'de',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'de',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'de_DE',
 
     /*
     |--------------------------------------------------------------------------
@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...
