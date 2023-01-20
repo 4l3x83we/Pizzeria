@@ -22,6 +22,6 @@ class AdminSeeder extends Seeder
             'name' => 'Alexander Guthmann',
             'email' => 'aguthmann83@gmail.com',
             'password' => Hash::make('alex2801'),
-        ])->assignRole('writer', 'admin');
+        ])->assignRole('writer', 'super_admin');
     }
 }

@@ -26,6 +26,16 @@
             @include('layouts.partials.backend.navbar')
 
             <main class="content">
+                @if(Session::has('message'))
+                    <div id="alert" class="alert alert-primary d-flex align-items-center" role="alert">
+                        <span class="bi flex-shrink-0 me-2"><em class="bi bi-megaphone"></em></span>
+                        <div>
+                            {{ __(Session::get('message')) }}
+                        </div>
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 @yield('content')
             </main>
 

@@ -29,6 +29,7 @@
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/helpers";
 @import "~bootstrap/scss/utilities/api";
+@import "~bootstrap/scss/alert";
 
 // Theme mixins
 @import "2-mixins/button";
@@ -63,3 +64,6 @@
 // 3rd party plugin styles
 @import '5-vendor/flatpickr';
 @import '5-vendor/simplebar';
+
+// Custom
+@import '6-custom/custom';
