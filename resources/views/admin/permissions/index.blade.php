@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.admin')
 
 @section('title') {{ __($page_title) }} @endsection
 
@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="table-wrap p-2 rounded-3 shadow-lg bg-white">
                     <div class="d-flex justify-content-end mb-3">
-                        <a href="{{ route('backend.permissions.create') }}" class="btn btn-success">{{ __('Create Permission') }}</a>
+                        <a href="{{ route('admin.permissions.create') }}" class="btn btn-success">{{ __('Create Permission') }}</a>
                     </div>
                     <div class="table-responsive-xl">
                         <table class="table table-secondary table-striped table-hover">
@@ -33,8 +33,8 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-end">
-                                            <a href="{{ route('backend.permissions.edit', $permission->id) }}" class="btn btn-link text-primary"><em class="bi bi-pen"></em> </a>
-                                            <form method="POST" action="{{ route('backend.permissions.destroy', $permission->id) }}" onsubmit="return confirm('{{ __('Are you sure?') }}');">
+                                            <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="btn btn-link text-primary"><em class="bi bi-pen"></em> </a>
+                                            <form method="POST" action="{{ route('admin.permissions.destroy', $permission->id) }}" onsubmit="return confirm('{{ __('Are you sure?') }}');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-link text-danger"><em class="bi bi-trash"></em></button>

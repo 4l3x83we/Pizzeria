@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.admin')
 
 @section('title') {{ __($page_title) }} @endsection
 
@@ -15,9 +15,9 @@
             <div class="col-md-12">
                 <div class="table-wrap p-2 rounded-3 shadow-lg bg-white">
                     <div class="d-flex justify-content-end mb-3">
-                        <a href="{{ route('backend.roles.index') }}" class="btn btn-success">{{ __('Back') }}</a>
+                        <a href="{{ route('admin.roles.index') }}" class="btn btn-success">{{ __('Back') }}</a>
                     </div>
-                    <form action="{{ route('backend.roles.store') }}" method="POST" class="row g-3">
+                    <form action="{{ route('admin.roles.store') }}" method="POST" class="row g-3">
                         @csrf
                         <div class="col-md-12">
                             <label for="name" class="form-label @error('name') text-danger fw-bold @enderror">{{ __('Roles Name') }}</label>

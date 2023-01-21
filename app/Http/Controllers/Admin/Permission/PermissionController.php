@@ -8,7 +8,7 @@
  * Time: 6:29
  */
 
-namespace App\Http\Controllers\Backend\Permission;
+namespace App\Http\Controllers\Admin\Permission;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,14 +22,14 @@ class PermissionController extends Controller
         $page_title = 'Permissions';
         $permissions = Permission::all();
 
-        return view('backend.permissions.index', compact('page_title', 'permissions'));
+        return view('admin.permissions.index', compact('page_title', 'permissions'));
     }
 
     public function create()
     {
         $page_title = 'Create Permission';
 
-        return view('backend.permissions.create', compact('page_title'));
+        return view('admin.permissions.create', compact('page_title'));
     }
 
     public function store(Request $request): \Illuminate\Http\RedirectResponse
@@ -37,7 +37,7 @@ class PermissionController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         Permission::create($validated);
 
-        return to_route('backend.permissions.index')->with('message', 'Permission Created successfully.');
+        return to_route('admin.permissions.index')->with('message', 'Permission Created successfully.');
     }
 
     public function edit(Permission $permission)
@@ -45,7 +45,7 @@ class PermissionController extends Controller
         $page_title = 'Update Permission';
         $roles = Role::all();
 
-        return view('backend.permissions.edit', compact('page_title', 'permission', 'roles'));
+        return view('admin.permissions.edit', compact('page_title', 'permission', 'roles'));
     }
 
     public function update(Request $request, Permission $permission): \Illuminate\Http\RedirectResponse
@@ -53,14 +53,14 @@ class PermissionController extends Controller
         $validated = $request->validate(['name' => 'required']);
         $permission->update($validated);
 
-        return to_route('backend.permissions.index')->with('message', 'Permission Updated successfully.');
+        return to_route('admin.permissions.index')->with('message', 'Permission Updated successfully.');
     }
 
     public function destroy(Request $request, Permission $permission): \Illuminate\Http\RedirectResponse
     {
         $permission->delete();
 
-        return to_route('backend.roles.index')->with('message', 'Permission deleted.');
+        return to_route('admin.roles.index')->with('message', 'Permission deleted.');
     }
 
     public function assignRole(Request $request, Permission $permission): \Illuminate\Http\RedirectResponse

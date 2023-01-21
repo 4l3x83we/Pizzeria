@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.admin')
 
 @section('title') {{ __($page_title) }} @endsection
 
@@ -14,27 +14,32 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap p-2 rounded-3 shadow-lg bg-white">
-                    <div class="d-flex justify-content-end mb-3">
-                        <a href="{{ route('backend.roles.create') }}" class="btn btn-success">{{ __('Create Role') }}</a>
-                    </div>
                     <div class="table-responsive-xl">
                         <table class="table table-secondary table-striped table-hover">
                             <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('E-Mail Address') }}</th>
+                                <th>{{ __('Roles') }}</th>
                                 <th>&nbsp;</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($roles as $role)
+                            @foreach($users as $user)
                                 <tr>
                                     <td>
-                                        {{ __($role->name) }}
+                                        {{ $user->name }}
+                                    </td>
+                                    <td>
+                                        {{ $user->email }}
+                                    </td>
+                                    <td>
+{{--                                        {{ $user->email }}--}}
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-end">
-                                            <a href="{{ route('backend.roles.edit', $role->id) }}" class="btn btn-link text-primary"><em class="bi bi-pen"></em> </a>
-                                            <form method="POST" action="{{ route('backend.roles.destroy', $role->id) }}" onsubmit="return confirm('{{ __('Are you sure?') }}');">
+                                            <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-link text-primary"><em class="bi bi-key"></em></a>
+                                            <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}" onsubmit="return confirm('{{ __('Are you sure?') }}');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-link text-danger"><em class="bi bi-trash"></em></button>

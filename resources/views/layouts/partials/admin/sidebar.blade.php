@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" href="{{ route('backend.dashboard.index') }}">
+        <a class="sidebar-brand" href="{{ route('admin.dashboard.index') }}">
             <span class="align-middle">{{ env('APP_NAME') }}</span>
         </a>
 
@@ -9,23 +9,23 @@
                 {{ __('Pages') }}
             </li>
 
-            <li class="sidebar-item {{ request()->routeIs('backend.dashboard.*') ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('backend.dashboard.index') }}">
+            <li class="sidebar-item {{ request()->routeIs('admin.dashboard.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.dashboard.index') }}">
                     <em class="bi bi-speedometer align-middle"></em> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
-            <li class="sidebar-item {{ request()->routeIs('backend.roles.*') ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('backend.roles.index') }}">
+            <li class="sidebar-item {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.roles.index') }}">
                     <em class="bi bi-key align-middle"></em> <span class="align-middle">{{ __('Roles') }}</span>
                 </a>
             </li>
-            <li class="sidebar-item {{ request()->routeIs('backend.permissions.*') ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('backend.permissions.index') }}">
+            <li class="sidebar-item {{ request()->routeIs('admin.permissions.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.permissions.index') }}">
                     <em class="bi bi-key-fill align-middle"></em> <span class="align-middle">{{ __('Permissions') }}</span>
                 </a>
             </li>
-            <li class="sidebar-item {{ request()->routeIs('backend.users.*') ? 'active' : '' }}">
-                <a class="sidebar-link" href="{{ route('backend.users.index') }}">
+            <li class="sidebar-item {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.users.index') }}">
                     <em class="bi bi-people align-middle"></em> <span class="align-middle">{{ __('Users') }}</span>
                 </a>
             </li>

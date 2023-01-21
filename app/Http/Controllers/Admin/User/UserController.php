@@ -8,7 +8,7 @@
  * Time: 13:12
  */
 
-namespace App\Http\Controllers\Backend\User;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -23,7 +23,7 @@ class UserController extends Controller
         $page_title = 'Users';
         $users = User::all();
 
-        return view('backend.users.index', compact('page_title', 'users'));
+        return view('admin.users.index', compact('page_title', 'users'));
     }
 
     public function show(User $user)
@@ -32,7 +32,7 @@ class UserController extends Controller
         $roles = Role::all();
         $permissions = Permission::all();
 
-        return view('backend.users.role', compact('page_title', 'user', 'roles', 'permissions'));
+        return view('admin.users.role', compact('page_title', 'user', 'roles', 'permissions'));
     }
 
     public function destroy(Request $request, User $user)

@@ -8,7 +8,7 @@
  * Time: 14:49
  */
 
-namespace App\Http\Controllers\Backend\Dashboard;
+namespace App\Http\Controllers\Admin\Dashboard;
 
 use App\Http\Controllers\Controller;
 
@@ -18,6 +18,6 @@ class DashboardController extends Controller
     {
         $page_title = 'Dashboard';
 
-        return view('backend.dashboard', compact('page_title'));
+        return view('admin.dashboard', compact('page_title'));
     }
 }

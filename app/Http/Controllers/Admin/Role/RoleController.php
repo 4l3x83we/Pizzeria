@@ -8,7 +8,7 @@
  * Time: 6:30
  */
 
-namespace App\Http\Controllers\Backend\Role;
+namespace App\Http\Controllers\Admin\Role;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,14 +22,14 @@ class RoleController extends Controller
         $page_title = 'Roles';
         $roles = Role::whereNotIn('name', ['admin', 'super_admin'])->get();
 
-        return view('backend.roles.index', compact('page_title', 'roles'));
+        return view('admin.roles.index', compact('page_title', 'roles'));
     }
 
     public function create()
     {
         $page_title = 'Create Role';
 
-        return view('backend.roles.create', compact('page_title'));
+        return view('admin.roles.create', compact('page_title'));
     }
 
     public function store(Request $request): \Illuminate\Http\RedirectResponse
@@ -37,7 +37,7 @@ class RoleController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         Role::create($validated);
 
-        return to_route('backend.roles.index')->with('message', 'Role Created successfully.');
+        return to_route('admin.roles.index')->with('message', 'Role Created successfully.');
     }
 
     public function edit(Role $role)
@@ -45,7 +45,7 @@ class RoleController extends Controller
         $page_title = 'Update Role';
         $permissions = Permission::all();
 
-        return view('backend.roles.edit', compact('page_title', 'role', 'permissions'));
+        return view('admin.roles.edit', compact('page_title', 'role', 'permissions'));
     }
 
     public function update(Request $request, Role $role): \Illuminate\Http\RedirectResponse
@@ -53,14 +53,14 @@ class RoleController extends Controller
         $validated = $request->validate(['name' => 'required']);
         $role->update($validated);
 
-        return to_route('backend.roles.index')->with('message', 'Role Updated successfully.');
+        return to_route('admin.roles.index')->with('message', 'Role Updated successfully.');
     }
 
     public function destroy(Request $request, Role $role): \Illuminate\Http\RedirectResponse
     {
         $role->delete();
 
-        return to_route('backend.roles.index')->with('message', 'Role deleted.');
+        return to_route('admin.roles.index')->with('message', 'Role deleted.');
     }
 
     public function givePermission(Request $request, Role $role): \Illuminate\Http\RedirectResponse
