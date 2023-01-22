@@ -14,6 +14,20 @@
                     <em class="bi bi-speedometer align-middle"></em> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
+            <li class="sidebar-item {{ request()->routeIs('admin.allergene.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.allergene.index') }}">
+                    <em class="bi bi-list align-middle"></em> <span class="align-middle">{{ __('Allergene') }}</span>
+                </a>
+            </li>
+            <li class="sidebar-item {{ request()->routeIs('admin.additive.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('admin.additive.index') }}">
+                    <em class="bi bi-list align-middle"></em> <span class="align-middle">{{ __('Additive') }}</span>
+                </a>
+            </li>
+
+            <li class="sidebar-header">
+                {{ __('User') }}
+            </li>
             <li class="sidebar-item {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('admin.roles.index') }}">
                     <em class="bi bi-key align-middle"></em> <span class="align-middle">{{ __('Roles') }}</span>

@@ -1,8 +1,25 @@
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'frontend/1-variables/variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// Theme mixins
+@import "frontend/2-mixins/button";
+
+// Theme components
+
+// Theme utilities
+@import "frontend/4-utilities/cursors";
+
+// 3rd party plugins
+@import "../../node_modules/animate.css/animate.css";
+
+// 3rd party plugin styles
+
+// Custom
+@import "frontend/6-custom/custom";
