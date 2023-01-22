@@ -1145,5 +1145,16 @@
     "User deleted.": "Benutzer gelöscht.",
     "Show": "Zeige",
     "User Name": "Nutzername",
-    "you are admin.": "Sie sind Administrator."
+    "you are admin.": "Sie sind Administrator.",
+    "Create Allergene": "Allergen erstellen",
+    "Create Additive": "Zusatzstoffe erstellen",
+    "Labelling": "Kennzeichnung",
+    "Additive": "Zusatzstoff",
+    "Additive Updated successfully.": "Zusatzstoff erfolgreich aktualisiert.",
+    "Additive Created successfully.": "Zusatzstoff erfolgreich erstellt.",
+    "Additive deleted.": "Zusatzstoff gelöscht.",
+    "Allergene": "Allergen",
+    "Allergene Updated successfully.": "Allergen erfolgreich aktualisiert.",
+    "Allergene Created successfully.": "Allergen erfolgreich erstellt.",
+    "Allergene deleted.": "Allergen gelöscht."
 }
