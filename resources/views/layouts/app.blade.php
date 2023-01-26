@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -15,6 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
+
+    @stack('css')
 </head>
 <body>
     <!-- Spinner Start -->
@@ -27,9 +29,7 @@
     @include('layouts.partials.frontend.navbar')
     <!-- Navbar End -->
 
-    <main class="py-4">
-        @yield('content')
-    </main>
+    @yield('content')
 
     <!-- Footer Start -->
     @include('layouts.partials.frontend.footer')
@@ -37,5 +37,8 @@
 
     <!-- Back to top -->
     <a href="javascript:" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" style="display: none;"><em class="bi bi-arrow-up"></em></a>
+
+    @stack('js')
+    @stack('scripts')
 </body>
 </html>

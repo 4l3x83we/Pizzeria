@@ -11,6 +11,23 @@
     };
     spinner();
 
+    // Fixed Navbar
+    $(window).scroll(function () {
+        if ($(window).width() < 992) {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-white shadow-sm');
+            } else {
+                $('.fixed-top').removeClass('bg-white shadow-sm');
+            }
+        } else {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-white shadow-sm');
+            } else {
+                $('.fixed-top').removeClass('bg-white shadow-sm');
+            }
+        }
+    });
+
     // Back to top
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {

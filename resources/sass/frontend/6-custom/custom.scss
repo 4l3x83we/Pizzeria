@@ -1,6 +1,11 @@
 /********** Template CSS **********/
 :root {
+    --violet: #5F2167;
+    --violet-rgb: rgb(95, 33, 118);
+}
 
+a {
+    text-decoration: none;
 }
 
 .back-to-top {
@@ -73,6 +78,121 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
+.navbar {
+    border-bottom: 3px solid var(--violet);
+
+    .navbar-brand {
+        top: 6px;
+        position: absolute;
+        border: 3px solid var(--violet);
+        border-radius: 0.3em;
+        padding: 10px;
+        background: $dark;
+    }
+
+    .navbar-toggler {
+        position: relative;
+        left: 92%;
+    }
+
+    .navbar-collapse.show {
+        padding-top: 70px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .navbar {
+        .navbar-toggler {
+            position: relative;
+            left: 90%;
+        }
+    }
+}
+
+/*** Hero ***/
+#hero {
+    margin-top: 60px;
+
+    .hero-image {
+        height: calc(100vh - 60px);
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+
+    .hero-caption {
+        background-size: cover;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(95, 33, 118, 0.5) 25%, rgba(95, 33, 118, 0.75) 50%, rgba(95, 33, 118, 0.5) 75%, rgba(255, 255, 255, 0) 100%) center center;
+        border: 1px solid var(--violet);
+        border-radius: 5px;
+        padding: 10px 5px;
+        color: $white;
+        font-weight: bold;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    #hero {
+        .hero-image {
+            height: 300px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #hero {
+        .hero-image {
+            height: 350px;
+        }
+
+        .hero-caption form {
+            width: 207px;
+        }
+
+        .thanks {
+            font-size: 14px;
+        }
+    }
+}
+
+.app {
+    padding-top: 70px;
+    z-index: 3;
+    position: relative;
+
+    .app-background {
+        color: white;
+        background: var(--violet);
+    }
+
+    .app-logo-overlap {
+        margin-top: -50px;
+
+        img {
+            max-width: 180px;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .app-store {
+        width: auto;
+        height: 40px;
+    }
+
+    .app-background .text-muted {
+        font-size: 14px;
+    }
+}
+
+
+
+@include media-breakpoint-down(sm) {
+    .app {
+        padding-top: 0;
+    }
+}
+
 /*** Footer ***/
 .footer {
     color: #999999;
@@ -97,7 +217,7 @@
         }
 
         &:hover {
-            color: var(--light);
+            color: $light;
             letter-spacing: 1px;
             box-shadow: none;
         }
@@ -109,12 +229,41 @@
         border-top: 1px solid rgba(256, 256, 256, 0.1);
 
         a {
-            color: var(--light);
+            color: $light;
 
             &:hover {
-                color: var(--primary);
+                color: $primary;
             }
         }
     }
 }
 
+.col-0 {
+    width: 0;
+    display: none;
+}
+
+.col-sm-0 {
+    width: 0;
+    display: none;
+}
+
+.col-md-0 {
+    width: 0;
+    display: none;
+}
+
+.col-lg-0 {
+    width: 0;
+    display: none;
+}
+
+.col-xl-0 {
+    width: 0;
+    display: none;
+}
+
+.col-xxl-0 {
+    width: 0;
+    display: none;
+}

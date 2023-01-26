@@ -22,3 +22,8 @@ setTimeout(function () {
     // Adding the class dynamically
     $('#alert').addClass('visually-hidden');
 }, 15000);
+
+import.meta.glob([
+    '../images/**',
+    '../fonts/**',
+]);
